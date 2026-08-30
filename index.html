@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind CSS — приклад</title>
+
+  <!-- Підключення Tailwind CSS через CDN. Так найпростіше почати без збірки проєкту. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-100 flex items-center justify-center p-6">
+
+  <!-- Картка: приклад типового UI-компонента, зібраного лише з утилітарних класів Tailwind -->
+  <div class="bg-white rounded-2xl shadow-lg p-8 max-w-sm w-full text-center">
+
+    <!-- Аватар -->
+    <div class="w-20 h-20 rounded-full bg-indigo-500 text-white text-2xl font-bold flex items-center justify-center mx-auto mb-4">
+      Ю
+    </div>
+
+    <!-- Ім'я та роль -->
+    <h1 class="text-xl font-semibold text-slate-900">Юлія Масалова</h1>
+    <p class="text-sm text-indigo-600 font-medium mb-3">UI/UX дизайнер</p>
+
+    <!-- Опис -->
+    <p class="text-slate-600 mb-6">
+      Це проста картка, побудована на Tailwind CSS. Кожен клас відповідає за одну властивість:
+      відступи, кольори, тіні, заокруглення тощо.
+    </p>
+
+    <!-- Кнопка -->
+    <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-5 py-2 rounded-lg transition-colors">
+      Написати мені
+    </button>
+  </div>
+
+</body>
+</html>
