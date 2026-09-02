@@ -6,7 +6,8 @@
 ## Tech Stack
 - **HTML5** — кожна сторінка/компонент це окремий самодостатній `.html`-файл
 - **Tailwind CSS через CDN** (`<script src="https://cdn.tailwindcss.com">`) — без build-кроку, без npm/package.json
-- Немає фреймворку (React/Vue/etc), немає JS-логіки, немає bundler'а (Vite/Webpack), немає TypeScript
+- Мінімальний vanilla JS дозволений для мікро-інтеракцій/анімацій компонентів
+- Немає важких фреймворків (React/Vue/etc), немає bundler'а (Vite/Webpack), немає TypeScript — якщо конкретне завдання явно не вимагає інакше
 - Немає тестів, лінтера, CI
 
 ## File Structure
@@ -25,6 +26,14 @@
 - Картка центрується на всю висоту екрана: `min-h-screen flex items-center justify-center`
 - HTML-коментарі пояснюють секції розмітки (аватар, кнопки, опис) — мова коментарів і контенту не завжди однакова (є українська, є російська, є англійська)
 - `lang` атрибут `<html>` виставляється під мову контенту конкретної картки (не завжди `uk`)
+
+## UI Component Standards
+- **Tech Stack:** Pure HTML, Tailwind CSS (via CDN), and minimal vanilla JS for micro-interactions/animations. No heavy frameworks (like React) unless explicitly required by a specific task.
+- **States:** All interactive components (buttons, cards, etc.) must include and gracefully handle key states:
+  - `Default`
+  - `Hover` (smooth transitions and micro-animations)
+  - `Active` / `Pressed`
+  - `Disabled`
 
 ## What to do
 - Тримати кожен компонент одним самодостатнім `.html`-файлом (легко відкрити й подивитись без збірки)
