@@ -7,6 +7,8 @@
 
   <!-- Підключення Tailwind CSS через CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Design tokens (CSS-змінні, згенеровані Style Dictionary з tokens.json) -->
+  <link rel="stylesheet" href="src/styles/tokens.css">
 </head>
 <body class="min-h-screen bg-slate-100 flex items-center justify-center p-6">
 
@@ -15,18 +17,18 @@
     <div>
       <h1 class="text-xl font-semibold text-slate-900 mb-1">Button Component</h1>
       <p class="text-sm text-slate-500">Default · Hover · Active · Disabled</p>
-      <p class="text-xs text-slate-400 mt-1">Кольори й розміри — з Figma variables (button/*)</p>
+      <p class="text-xs text-slate-400 mt-1">Кольори — через var(--button-*) з tokens.css</p>
     </div>
 
     <!-- Інтерактивна кнопка: Default → Hover → Active обробляються Tailwind-варіантами,
-         Disabled перемикається чекбоксом нижче через JS -->
+         Disabled перемикається чекбоксом нижче через JS. Кольори — CSS-змінні токенів -->
     <button
       id="demo-button"
       type="button"
-      class="bg-[#2563eb] hover:bg-[#6d96f2] active:bg-[#1d4ed8]
+      class="bg-[var(--button-bg-default)] hover:bg-[var(--button-bg-hover)] active:bg-[var(--button-bg-active)]
              active:scale-95
-             disabled:bg-[#d5dce2] disabled:text-[#b0bec9] disabled:cursor-not-allowed disabled:active:scale-100
-             text-white font-medium px-4 py-2 gap-1 rounded-lg
+             disabled:bg-[var(--button-bg-disabled)] disabled:text-[var(--button-text-disabled)] disabled:cursor-not-allowed disabled:active:scale-100
+             text-[var(--button-text)] font-medium px-4 py-2 gap-1 rounded-lg
              transition-all duration-200 ease-out
              mx-auto"
     >
@@ -35,35 +37,35 @@
 
     <!-- Перемикач стану Disabled для демонстрації -->
     <label class="flex items-center justify-center gap-2 text-sm text-slate-600 cursor-pointer select-none">
-      <input id="disable-toggle" type="checkbox" class="w-4 h-4 accent-[#2563eb]">
+      <input id="disable-toggle" type="checkbox" class="w-4 h-4 accent-[var(--brand-primary)]">
       Вимкнути кнопку (Disabled)
     </label>
 
     <!-- Статичні знімки всіх станів для референсу -->
     <div class="grid grid-cols-2 gap-4 pt-4 border-t border-slate-200">
       <div class="flex flex-col items-center gap-2">
-        <button type="button" class="bg-[#2563eb] text-white font-medium px-4 py-2 rounded-lg text-sm">
+        <button type="button" class="bg-[var(--button-bg-default)] text-[var(--button-text)] font-medium px-4 py-2 rounded-lg text-sm">
           Default
         </button>
-        <span class="text-xs text-slate-400">bg #2563eb</span>
+        <span class="text-xs text-slate-400">--button-bg-default</span>
       </div>
       <div class="flex flex-col items-center gap-2">
-        <button type="button" class="bg-[#6d96f2] text-white font-medium px-4 py-2 rounded-lg text-sm">
+        <button type="button" class="bg-[var(--button-bg-hover)] text-[var(--button-text)] font-medium px-4 py-2 rounded-lg text-sm">
           Hover
         </button>
-        <span class="text-xs text-slate-400">bg #6d96f2</span>
+        <span class="text-xs text-slate-400">--button-bg-hover</span>
       </div>
       <div class="flex flex-col items-center gap-2">
-        <button type="button" class="bg-[#1d4ed8] scale-95 text-white font-medium px-4 py-2 rounded-lg text-sm">
+        <button type="button" class="bg-[var(--button-bg-active)] scale-95 text-[var(--button-text)] font-medium px-4 py-2 rounded-lg text-sm">
           Active
         </button>
-        <span class="text-xs text-slate-400">bg #1d4ed8 + scale-95</span>
+        <span class="text-xs text-slate-400">--button-bg-active + scale-95</span>
       </div>
       <div class="flex flex-col items-center gap-2">
-        <button type="button" disabled class="bg-[#d5dce2] text-[#b0bec9] cursor-not-allowed font-medium px-4 py-2 rounded-lg text-sm">
+        <button type="button" disabled class="bg-[var(--button-bg-disabled)] text-[var(--button-text-disabled)] cursor-not-allowed font-medium px-4 py-2 rounded-lg text-sm">
           Disabled
         </button>
-        <span class="text-xs text-slate-400">bg #d5dce2, текст #b0bec9</span>
+        <span class="text-xs text-slate-400">--button-bg-disabled / -text-disabled</span>
       </div>
     </div>
 
