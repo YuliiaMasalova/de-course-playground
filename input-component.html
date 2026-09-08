@@ -7,6 +7,8 @@
 
   <!-- Підключення Tailwind CSS через CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Design tokens (CSS-змінні, згенеровані Style Dictionary з tokens.json) -->
+  <link rel="stylesheet" href="src/styles/tokens.css">
 </head>
 <body class="min-h-screen bg-slate-100 flex items-center justify-center p-6">
 
@@ -15,15 +17,15 @@
     <div class="text-center">
       <h1 class="text-xl font-semibold text-slate-900 mb-1">Input Component</h1>
       <p class="text-sm text-slate-500">Default · Focused · Filled · Error · Disabled</p>
-      <p class="text-xs text-slate-400 mt-1">Кольори — з Figma variables (input/*)</p>
+      <p class="text-xs text-slate-400 mt-1">Кольори — через var(--input-*) з tokens.css</p>
     </div>
 
     <!-- Жива інтерактивна версія поля: Default → Focused (клік) → Filled (введення) → Error (валідація) -->
     <div class="flex flex-col gap-2">
-      <label for="demo-email" class="text-[16px] text-[#394753]">Email*</label>
-      <div class="flex items-center justify-between border border-[#b0bec9] px-4 py-4 w-full transition-colors focus-within:border-[#2563eb]" id="demo-field">
+      <label for="demo-email" class="text-[16px] text-[var(--input-text)]">Email*</label>
+      <div class="flex items-center justify-between border border-[var(--input-border-default)] px-4 py-4 w-full transition-colors focus-within:border-[var(--border-active)]" id="demo-field">
         <div class="flex items-center gap-2 flex-1 min-w-0">
-          <svg class="shrink-0 size-5 text-[#b0bec9]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <svg class="shrink-0 size-5 text-[var(--input-placeholder)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
             <circle cx="12" cy="12" r="4"/>
             <path d="M16 12v1.5a2.5 2.5 0 0 0 5 0V12a9 9 0 1 0-4 7.5"/>
           </svg>
@@ -31,16 +33,16 @@
             id="demo-email"
             type="email"
             placeholder="ex. email@domain.com"
-            class="flex-1 min-w-0 outline-none text-[16px] tracking-[0.16px] text-[#394753] placeholder-[#b0bec9] bg-transparent"
+            class="flex-1 min-w-0 outline-none text-[16px] tracking-[0.16px] text-[var(--input-text)] placeholder-[var(--input-placeholder)] bg-transparent"
           >
         </div>
-        <button type="button" id="demo-clear" aria-label="Очистити поле" class="shrink-0 text-[#b0bec9] hover:text-[#394753]">
+        <button type="button" id="demo-clear" aria-label="Очистити поле" class="shrink-0 text-[var(--input-placeholder)] hover:text-[var(--input-text)]">
           <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
             <path d="M6 6l12 12M18 6L6 18"/>
           </svg>
         </button>
       </div>
-      <p id="demo-helper" class="text-xs tracking-[0.12px] text-[#425362]">One lowercase character</p>
+      <p id="demo-helper" class="text-xs tracking-[0.12px] text-[var(--text-secondary)]">One lowercase character</p>
     </div>
 
     <!-- Статичні знімки всіх станів для референсу -->
@@ -48,52 +50,52 @@
 
       <!-- Default -->
       <div class="flex flex-col gap-2">
-        <label class="text-[16px] text-[#394753]">Email*</label>
-        <div class="flex items-center justify-between border border-[#b0bec9] px-4 py-4 w-full">
+        <label class="text-[16px] text-[var(--input-text)]">Email*</label>
+        <div class="flex items-center justify-between border border-[var(--input-border-default)] px-4 py-4 w-full">
           <div class="flex items-center gap-2">
-            <svg class="size-5 text-[#b0bec9]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M16 12v1.5a2.5 2.5 0 0 0 5 0V12a9 9 0 1 0-4 7.5"/></svg>
-            <span class="text-[16px] tracking-[0.16px] text-[#b0bec9]">ex. email@domain.com</span>
+            <svg class="size-5 text-[var(--input-placeholder)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M16 12v1.5a2.5 2.5 0 0 0 5 0V12a9 9 0 1 0-4 7.5"/></svg>
+            <span class="text-[16px] tracking-[0.16px] text-[var(--input-placeholder)]">ex. email@domain.com</span>
           </div>
-          <svg class="size-5 text-[#b0bec9]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          <svg class="size-5 text-[var(--input-placeholder)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
         </div>
-        <p class="text-xs tracking-[0.12px] text-[#425362]">One lowercase character</p>
+        <p class="text-xs tracking-[0.12px] text-[var(--text-secondary)]">One lowercase character</p>
       </div>
 
       <!-- Filled -->
       <div class="flex flex-col gap-2">
-        <label class="text-[16px] text-[#394753]">Email*</label>
-        <div class="flex items-center justify-between border border-[#b0bec9] px-4 py-4 w-full">
+        <label class="text-[16px] text-[var(--input-text)]">Email*</label>
+        <div class="flex items-center justify-between border border-[var(--input-border-default)] px-4 py-4 w-full">
           <div class="flex items-center gap-2">
-            <svg class="size-5 text-[#394753]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M16 12v1.5a2.5 2.5 0 0 0 5 0V12a9 9 0 1 0-4 7.5"/></svg>
-            <span class="text-[16px] tracking-[0.16px] text-[#394753]">yuliia@domain.com</span>
+            <svg class="size-5 text-[var(--input-text)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M16 12v1.5a2.5 2.5 0 0 0 5 0V12a9 9 0 1 0-4 7.5"/></svg>
+            <span class="text-[16px] tracking-[0.16px] text-[var(--input-text)]">yuliia@domain.com</span>
           </div>
-          <svg class="size-5 text-[#394753]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          <svg class="size-5 text-[var(--input-text)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
         </div>
-        <p class="text-xs tracking-[0.12px] text-[#425362]">One lowercase character</p>
+        <p class="text-xs tracking-[0.12px] text-[var(--text-secondary)]">One lowercase character</p>
       </div>
 
       <!-- Error -->
       <div class="flex flex-col gap-2">
-        <label class="text-[16px] text-[#394753]">Email*</label>
-        <div class="flex items-center justify-between border border-[#f43f5e] px-4 py-4 w-full">
+        <label class="text-[16px] text-[var(--input-text)]">Email*</label>
+        <div class="flex items-center justify-between border border-[var(--input-border-error)] px-4 py-4 w-full">
           <div class="flex items-center gap-2">
-            <svg class="size-5 text-[#f43f5e]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M16 12v1.5a2.5 2.5 0 0 0 5 0V12a9 9 0 1 0-4 7.5"/></svg>
-            <span class="text-[16px] tracking-[0.16px] text-[#394753]">yuliia@domain</span>
+            <svg class="size-5 text-[var(--input-border-error)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M16 12v1.5a2.5 2.5 0 0 0 5 0V12a9 9 0 1 0-4 7.5"/></svg>
+            <span class="text-[16px] tracking-[0.16px] text-[var(--input-text)]">yuliia@domain</span>
           </div>
-          <svg class="size-5 text-[#394753]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          <svg class="size-5 text-[var(--input-text)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
         </div>
-        <p class="text-xs tracking-[0.12px] text-[#e11d48]">One lowercase character</p>
+        <p class="text-xs tracking-[0.12px] text-[var(--text-error)]">One lowercase character</p>
       </div>
 
       <!-- Disabled -->
       <div class="flex flex-col gap-2">
-        <label class="text-[16px] text-[#d5dce2]">Email*</label>
-        <div class="flex items-center justify-between border border-[#d5dce2] px-4 py-4 w-full">
+        <label class="text-[16px] text-[var(--border-disabled)]">Email*</label>
+        <div class="flex items-center justify-between border border-[var(--border-disabled)] px-4 py-4 w-full">
           <div class="flex items-center gap-2">
-            <svg class="size-5 text-[#d5dce2]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M16 12v1.5a2.5 2.5 0 0 0 5 0V12a9 9 0 1 0-4 7.5"/></svg>
-            <span class="text-[16px] tracking-[0.16px] text-[#d5dce2]">ex. email@domain.com</span>
+            <svg class="size-5 text-[var(--border-disabled)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M16 12v1.5a2.5 2.5 0 0 0 5 0V12a9 9 0 1 0-4 7.5"/></svg>
+            <span class="text-[16px] tracking-[0.16px] text-[var(--border-disabled)]">ex. email@domain.com</span>
           </div>
-          <svg class="size-5 text-[#d5dce2]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          <svg class="size-5 text-[var(--border-disabled)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
         </div>
       </div>
 
@@ -111,8 +113,8 @@
     input.addEventListener('blur', () => {
       const isError = input.value.length > 0 && !input.value.includes('@');
       helper.textContent = isError ? 'Введіть коректний email' : 'One lowercase character';
-      helper.classList.toggle('text-[#e11d48]', isError);
-      helper.classList.toggle('text-[#425362]', !isError);
+      helper.classList.toggle('text-[var(--text-error)]', isError);
+      helper.classList.toggle('text-[var(--text-secondary)]', !isError);
     });
 
     clearBtn.addEventListener('click', () => {

@@ -7,6 +7,8 @@
 
   <!-- Підключення Tailwind CSS через CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Design tokens (CSS-змінні, згенеровані Style Dictionary з tokens.json) -->
+  <link rel="stylesheet" href="src/styles/tokens.css">
 </head>
 <body class="min-h-screen bg-slate-100 flex items-center justify-center p-6">
 
@@ -15,19 +17,19 @@
     <div class="text-center">
       <h1 class="text-xl font-semibold text-slate-900 mb-1">Table Row Component</h1>
       <p class="text-sm text-slate-500">Default · Hover · Selected · Skeleton</p>
-      <p class="text-xs text-slate-400 mt-1">Кольори — з Figma variables (table-row/*, cell/*)</p>
+      <p class="text-xs text-slate-400 mt-1">Кольори — через var(--table-row-*) з tokens.css</p>
     </div>
 
     <!-- Жива інтерактивна версія: Hover — курсор, Selected — клік перемикає стан -->
     <button
       type="button"
       id="demo-row"
-      class="border border-[#b0bec9] hover:border-[#2563eb] data-[selected=true]:bg-[#eceff2] data-[selected=true]:border-[#2563eb]
+      class="border border-[var(--table-row-border)] hover:border-[var(--table-row-border-hover)] data-[selected=true]:bg-[var(--table-row-bg-selected)] data-[selected=true]:border-[var(--table-row-border-hover)]
              flex items-center gap-4 px-0 py-1 rounded-lg w-full transition-colors text-left"
     >
-      <span class="flex-1 px-6 py-4 text-[16px] font-medium text-[#0f1218]">Jordi in Cryptoland</span>
-      <span class="flex-1 px-6 py-4 text-[16px] font-medium text-[#0f1218] text-center">293,190,860.970</span>
-      <span class="flex-1 px-6 py-4 text-[16px] font-medium text-[#0f1218] text-center">$0.9992</span>
+      <span class="flex-1 px-6 py-4 text-[16px] font-medium text-[var(--table-row-text-title)]">Jordi in Cryptoland</span>
+      <span class="flex-1 px-6 py-4 text-[16px] font-medium text-[var(--table-row-text-title)] text-center">293,190,860.970</span>
+      <span class="flex-1 px-6 py-4 text-[16px] font-medium text-[var(--table-row-text-title)] text-center">$0.9992</span>
     </button>
     <p class="text-xs text-slate-400 -mt-4">Клікни на рядок, щоб перемкнути Selected</p>
 
@@ -35,36 +37,36 @@
     <div class="flex flex-col gap-3 pt-4 border-t border-slate-200">
 
       <!-- Default -->
-      <div class="border border-[#b0bec9] bg-white flex items-center gap-4 px-0 py-1 rounded-lg w-full">
-        <span class="flex-1 px-6 py-4 text-[16px] font-medium text-[#0f1218]">Jordi in Cryptoland</span>
-        <span class="flex-1 px-6 py-4 text-[16px] font-medium text-[#0f1218] text-center">293,190,860.970</span>
-        <span class="flex-1 px-6 py-4 text-[16px] font-medium text-[#0f1218] text-center">$0.9992</span>
+      <div class="border border-[var(--table-row-border)] bg-[var(--table-row-bg)] flex items-center gap-4 px-0 py-1 rounded-lg w-full">
+        <span class="flex-1 px-6 py-4 text-[16px] font-medium text-[var(--table-row-text-title)]">Jordi in Cryptoland</span>
+        <span class="flex-1 px-6 py-4 text-[16px] font-medium text-[var(--table-row-text-title)] text-center">293,190,860.970</span>
+        <span class="flex-1 px-6 py-4 text-[16px] font-medium text-[var(--table-row-text-title)] text-center">$0.9992</span>
       </div>
 
       <!-- Hover -->
-      <div class="border border-[#2563eb] bg-white flex items-center gap-4 px-0 py-1 rounded-lg w-full">
-        <span class="flex-1 px-6 py-4 text-[16px] font-medium text-[#0f1218]">Jordi in Cryptoland</span>
-        <span class="flex-1 px-6 py-4 text-[16px] font-medium text-[#0f1218] text-center">293,190,860.970</span>
-        <span class="flex-1 px-6 py-4 text-[16px] font-medium text-[#0f1218] text-center">$0.9992</span>
+      <div class="border border-[var(--table-row-border-hover)] bg-[var(--table-row-bg)] flex items-center gap-4 px-0 py-1 rounded-lg w-full">
+        <span class="flex-1 px-6 py-4 text-[16px] font-medium text-[var(--table-row-text-title)]">Jordi in Cryptoland</span>
+        <span class="flex-1 px-6 py-4 text-[16px] font-medium text-[var(--table-row-text-title)] text-center">293,190,860.970</span>
+        <span class="flex-1 px-6 py-4 text-[16px] font-medium text-[var(--table-row-text-title)] text-center">$0.9992</span>
       </div>
 
       <!-- Selected -->
-      <div class="border border-[#2563eb] bg-[#eceff2] flex items-center gap-4 px-0 py-1 rounded-lg w-full">
-        <span class="flex-1 px-6 py-4 text-[16px] font-medium text-[#0f1218]">Jordi in Cryptoland</span>
-        <span class="flex-1 px-6 py-4 text-[16px] font-medium text-[#0f1218] text-center">293,190,860.970</span>
-        <span class="flex-1 px-6 py-4 text-[16px] font-medium text-[#0f1218] text-center">$0.9992</span>
+      <div class="border border-[var(--table-row-border-hover)] bg-[var(--table-row-bg-selected)] flex items-center gap-4 px-0 py-1 rounded-lg w-full">
+        <span class="flex-1 px-6 py-4 text-[16px] font-medium text-[var(--table-row-text-title)]">Jordi in Cryptoland</span>
+        <span class="flex-1 px-6 py-4 text-[16px] font-medium text-[var(--table-row-text-title)] text-center">293,190,860.970</span>
+        <span class="flex-1 px-6 py-4 text-[16px] font-medium text-[var(--table-row-text-title)] text-center">$0.9992</span>
       </div>
 
       <!-- Skeleton -->
-      <div class="border border-[#b0bec9] bg-white flex items-center gap-4 px-0 py-1 rounded-lg w-full" aria-hidden="true">
+      <div class="border border-[var(--table-row-border)] bg-[var(--table-row-bg)] flex items-center gap-4 px-0 py-1 rounded-lg w-full" aria-hidden="true">
         <span class="flex-1 px-6 py-4">
-          <span class="block h-4 w-24 rounded bg-[#eceff2] animate-pulse"></span>
+          <span class="block h-4 w-24 rounded bg-[var(--surface-selected)] animate-pulse"></span>
         </span>
         <span class="flex-1 px-6 py-4 flex justify-center">
-          <span class="block h-4 w-28 rounded bg-[#eceff2] animate-pulse"></span>
+          <span class="block h-4 w-28 rounded bg-[var(--surface-selected)] animate-pulse"></span>
         </span>
         <span class="flex-1 px-6 py-4 flex justify-center">
-          <span class="block h-4 w-16 rounded bg-[#eceff2] animate-pulse"></span>
+          <span class="block h-4 w-16 rounded bg-[var(--surface-selected)] animate-pulse"></span>
         </span>
       </div>
 
