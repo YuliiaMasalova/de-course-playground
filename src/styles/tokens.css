@@ -4,7 +4,7 @@
 
 :root {
   --color-blue-300: #6d96f2; /** Primitives · color/blue/300 — світлий брендовий синій (button/bg-hover) */
-  --color-blue-500: #2563eb; /** Primitives · color/blue/500 — основний брендовий синій (button/bg-default) */
+  --color-blue-500: #1db6d8; /** Primitives · color/blue/500 — основний брендовий колір (button/bg-default) */
   --color-blue-700: #1d4ed8; /** Primitives · color/blue/700 — натиснутий стан (active) */
   --color-base-black: #0f1218; /** Primitives · color/base/black */
   --color-base-white: #ffffff; /** Primitives · color/base/white */
