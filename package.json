@@ -1,0 +1,25 @@
+{
+  "name": "design-engineer-git",
+  "version": "1.0.0",
+  "description": "Цей репозиторій — мій playground для практики Data Engineering курсу.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:tokens": "style-dictionary build --config style-dictionary.config.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YuliiaMasalova/de-course-playground.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/YuliiaMasalova/de-course-playground/issues"
+  },
+  "homepage": "https://github.com/YuliiaMasalova/de-course-playground#readme",
+  "devDependencies": {
+    "style-dictionary": "^5.5.3"
+  }
+}
