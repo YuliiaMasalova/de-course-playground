@@ -1,0 +1,88 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-blue-300: #6d96f2; /** Primitives · color/blue/300 — світлий брендовий синій (button/bg-hover) */
+  --color-blue-500: #2563eb; /** Primitives · color/blue/500 — основний брендовий синій (button/bg-default) */
+  --color-blue-700: #1d4ed8; /** Primitives · color/blue/700 — натиснутий стан (active) */
+  --color-base-black: #0f1218; /** Primitives · color/base/black */
+  --color-base-white: #ffffff; /** Primitives · color/base/white */
+  --color-base-transparent: rgba(255, 255, 255, 0); /** Primitives · color/base/transparent */
+  --color-gray-100: #eceff2; /** Primitives · color/gray/100 (Table Row bg Selected) */
+  --color-gray-200: #d5dce2; /** Primitives · color/gray/200 (disabled bg/border) */
+  --color-gray-300: #b0bec9; /** Primitives · color/gray/300 (border-default, placeholder, text/disabled) */
+  --color-gray-700: #425362; /** Primitives · color/gray/700 (text secondary) */
+  --color-gray-800: #394753; /** Primitives · color/gray/800 (text primary, input/text) */
+  --color-red-500: #f43f5e; /** Primitives · color/red/500 (input/border-error) */
+  --color-red-600: #e11d48; /** Primitives · color/red/600 (text error) */
+  --button-radius: 8px;
+  --button-padding-x: 16px;
+  --button-padding-y: 8px;
+  --button-spacing: 4px;
+  --button-icon-size: 16px;
+  --input-padding-x: 16px;
+  --input-padding-y: 16px;
+  --card-radius: 32px;
+  --card-padding-x: 32px;
+  --card-padding-y: 32px;
+  --card-spacing: 12px;
+  --card-width: 500px;
+  --table-row-radius: 8px;
+  --table-row-padding-x: 0px;
+  --table-row-padding-y: 4px;
+  --table-row-spacing: 16px;
+  --cell-padding-x: 24px;
+  --cell-padding-y: 16px;
+  --cell-spacing: 0px;
+  --scale-8: 8px;
+  --scale-12: 12px;
+  --scale-16: 16px;
+  --scale-20: 20px;
+  --size-border-2: 2px; /** sizes/border/bw-2 */
+  --font-family-primary: Inter; /** font/family/primary — основний шрифт */
+  --font-family-display: 'Overused Grotesk'; /** Шрифт тегів/заголовків карток */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-size-caption: 12px; /** scale/12 — helper text */
+  --font-size-body-small: 16px; /** Typography/Body/text small */
+  --font-size-body-base: 18px; /** Typography/Body/base */
+  --font-size-heading-h3: 24px; /** Typography/Headings/H3 */
+  --brand-primary: var(--color-blue-500); /** Semantic · brand/primary → color/blue/500. Bridge для --brand-primary / bg-brand-primary */
+  --brand-primary-hover: var(--color-blue-300); /** Наведення на брендові елементи */
+  --brand-primary-active: var(--color-blue-700); /** Натиснутий стан брендових елементів */
+  --text-primary: var(--color-gray-800);
+  --text-secondary: var(--color-gray-700);
+  --text-title: var(--color-base-black);
+  --text-disabled: var(--color-gray-300);
+  --text-error: var(--color-red-600);
+  --text-on-brand: var(--color-base-white);
+  --border-default: var(--color-gray-300);
+  --border-error: var(--color-red-500);
+  --border-disabled: var(--color-gray-200);
+  --surface-card: var(--color-base-white);
+  --surface-selected: var(--color-gray-100);
+  --surface-disabled: var(--color-gray-200);
+  --border-active: var(--brand-primary);
+  --button-bg-default: var(--brand-primary);
+  --button-bg-hover: var(--brand-primary-hover);
+  --button-bg-active: var(--brand-primary-active);
+  --button-bg-disabled: var(--surface-disabled);
+  --button-text: var(--text-on-brand);
+  --button-text-disabled: var(--text-disabled);
+  --input-text: var(--text-primary);
+  --input-placeholder: var(--text-disabled);
+  --input-border-default: var(--border-default);
+  --input-border-error: var(--border-error);
+  --card-bg: var(--surface-card);
+  --card-border: var(--border-default);
+  --card-border-hover: var(--brand-primary);
+  --card-text-title: var(--text-title);
+  --card-text-secondary: var(--text-secondary);
+  --table-row-bg: var(--surface-card);
+  --table-row-border: var(--border-default);
+  --table-row-border-hover: var(--brand-primary);
+  --table-row-bg-selected: var(--surface-selected);
+  --table-row-text-title: var(--text-title);
+}
